@@ -1,7 +1,8 @@
 import React from "react";
+import s from "./ErrorMessage.module.css";
 
 const ErrorMessage = ({ message }) => (
-  <div className="error-message">
+  <div className={s.errorMessage}>
     <p>{message}</p>
   </div>
 );

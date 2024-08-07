@@ -8,6 +8,7 @@ import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 import "../index.css";
+import s from "./App.module.css";
 
 const ACCESS_KEY = "P8YOxxvxj-IShqxLQ2a2CMw_idw1NliSSjcumTjvNDM";
 
@@ -33,10 +34,13 @@ const App = () => {
           },
         }
       );
+
+      const newImages = response.data.results.filter(
+        (newImage) => !images.some((image) => image.id === newImage.id)
+      );
+
       setImages((prevImages) =>
-        pageNum === 1
-          ? response.data.results
-          : [...prevImages, ...response.data.results]
+        pageNum === 1 ? newImages : [...prevImages, ...newImages]
       );
       setError(null);
     } catch (err) {

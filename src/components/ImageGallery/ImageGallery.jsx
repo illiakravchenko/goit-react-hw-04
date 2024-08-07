@@ -7,23 +7,7 @@ const ImageGallery = ({ images, onImageClick }) => {
     <ul className={s.galleryList}>
       {images.map((image) => (
         <li key={image.id} className={s.galleryItem}>
-          <ImageCard image={image} onImageClick={onImageClick}>
-            <ImageCard image={image} onImageClick={onImageClick}>
-              <ImageCard image={image} onImageClick={onImageClick} />
-              <ImageCard image={image} onImageClick={onImageClick} />
-              <ImageCard image={image} onImageClick={onImageClick} />
-            </ImageCard>
-            <ImageCard image={image} onImageClick={onImageClick}>
-              <ImageCard image={image} onImageClick={onImageClick} />
-              <ImageCard image={image} onImageClick={onImageClick} />
-              <ImageCard image={image} onImageClick={onImageClick} />
-            </ImageCard>
-            <ImageCard image={image} onImageClick={onImageClick}>
-              <ImageCard image={image} onImageClick={onImageClick} />
-              <ImageCard image={image} onImageClick={onImageClick} />
-              <ImageCard image={image} onImageClick={onImageClick} />
-            </ImageCard>
-          </ImageCard>
+          <ImageCard image={image} onImageClick={onImageClick} />
         </li>
       ))}
     </ul>
