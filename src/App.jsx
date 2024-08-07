@@ -34,13 +34,10 @@ const App = () => {
           },
         }
       );
-
-      const newImages = response.data.results.filter(
-        (newImage) => !images.some((image) => image.id === newImage.id)
-      );
-
       setImages((prevImages) =>
-        pageNum === 1 ? newImages : [...prevImages, ...newImages]
+        pageNum === 1
+          ? response.data.results
+          : [...prevImages, ...response.data.results]
       );
       setError(null);
     } catch (err) {
