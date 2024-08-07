@@ -1,0 +1,20 @@
+.imageCard {
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 10px;
+}
+
+.imageCard img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.nestedCards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
